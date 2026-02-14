@@ -1,0 +1,44 @@
+// Classe que representa um herói
+class Heroi {
+
+    // Método construtor
+    constructor(nome, idade, tipo) {
+        this.nome = nome;
+        this.idade = idade;
+        this.tipo = tipo;
+    }
+
+    // Método atacar
+    atacar() {
+        let ataque = "";
+
+        // Estrutura de decisão
+        if (this.tipo === "mago") {
+            ataque = "magia";
+        } else if (this.tipo === "guerreiro") {
+            ataque = "espada";
+        } else if (this.tipo === "monge") {
+            ataque = "artes marciais";
+        } else if (this.tipo === "ninja") {
+            ataque = "shuriken";
+        } else {
+            ataque = "um ataque desconhecido";
+        }
+
+        // Saída
+        console.log(`O ${this.tipo} atacou usando ${ataque}`);
+    }
+}
+
+// Criando objetos (variáveis com instâncias da classe)
+let herois = [
+    new Heroi("Arthas", 30, "guerreiro"),
+    new Heroi("Merlin", 120, "mago"),
+    new Heroi("Lee", 40, "monge"),
+    new Heroi("Hanzo", 28, "ninja")
+];
+
+// Laço de repetição para executar o ataque de todos os heróis
+for (let i = 0; i < herois.length; i++) {
+    herois[i].atacar();
+}
